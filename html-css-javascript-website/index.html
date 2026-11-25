@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,18 +6,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="site.css" type="text/css">
+
     <title>SynBio Ltd</title>
+
     <style>
         h1 {
             font-size: 3em;
             margin-top: 0.5em;
         }
-        
+
         .banner {
             max-width: 100%;
         }
-        
+
         .sub-title {
             background-color: #fff;
             font-size: 1.5em;
@@ -26,42 +30,58 @@
 </head>
 
 <body>
-    
+
     <header>
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="/" data-en="Home" data-fr="Accueil">Home</a></li>
+                <li><a href="services.html" data-en="Services" data-fr="Services">Services</a></li>
+                <li><a href="contact.html" data-en="Contact" data-fr="Contact">Contact</a></li>
             </ul>
+
             <button id="theme-toggle" aria-label="Switch to dark mode">
                 Dark Mode
             </button>
-            <a href="panier.html">Panier</a>
+
+           <button id="language-toggle">FR 🇫🇷</button>
+
+            <a href="panier.html" data-en="Cart" data-fr="Panier">Cart</a>
         </nav>
     </header>
+
     <main>
-        <aside><img src="images/logo.png" alt="SynBio logo"></aside>
+        <aside>
+            <img src="images/logo.png" alt="SynBio logo">
+        </aside>
+
         <article>
-            <img src="images/banner.png" class="banner" alt="SynBio Ltd" />
-            <h1>Welcome to SynBio </h1>
-            <p class="sub-title">
-                Synthetic Biology Products, Molecular Biology Reagents, Labortory setup and Capacity Building Training.
+            <img src="images/banner.png" class="banner" alt="SynBio Ltd">
+
+            <h1 data-en="Welcome to SynBio" data-fr="Bienvenue chez SynBio">
+                Welcome to SynBio
+            </h1>
+
+            <p class="sub-title"
+               data-en="Synthetic Biology Products, Molecular Biology Reagents, Laboratory setup and Capacity Building Training."
+               data-fr="Produits de biologie synthétique, réactifs de biologie moléculaire, installation de laboratoires et formations de renforcement des capacités.">
+                Synthetic Biology Products, Molecular Biology Reagents, Laboratory setup and Capacity Building Training.
             </p>
         </article>
     </main>
+
     <footer>
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="service.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                
+                <li><a href="/" data-en="Home" data-fr="Accueil">Home</a></li>
+                <li><a href="services.html" data-en="Services" data-fr="Services">Services</a></li>
+                <li><a href="contact.html" data-en="Contact" data-fr="Contact">Contact</a></li>
             </ul>
-            
         </nav>
     </footer>
-    <script src="theme.js"></script>
-</body>
 
+    <script src="theme.js"></script>
+    <script src="language.js"></script>
+
+</body>
 </html>
+```

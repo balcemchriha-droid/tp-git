@@ -1,0 +1,242 @@
+
+.sweet-container {
+    max-width: 1150px;
+    margin: 100px auto 60px;
+    padding: 20px;
+}
+
+.sweet-intro {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.intro-label {
+    color: #a493c0;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 12px;
+}
+
+.sweet-intro h1 {
+    color: #9279ae;
+    font-size: 40px;
+    margin: 15px 0;
+}
+
+.sweet-intro p {
+    color: #777;
+    max-width: 650px;
+    margin: auto;
+    line-height: 1.7;
+}
+
+.sweet-layout {
+    display: grid;
+    grid-template-columns: 1.4fr 0.9fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.sweet-form-card,
+.sweet-summary {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+}
+
+.sweet-form-card h2 {
+    color: #9279ae;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group > label:first-child {
+    display: block;
+    color: #554b60;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.form-group select,
+.form-group textarea,
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ded5e5;
+    border-radius: 9px;
+    background: white;
+    font-size: 15px;
+    color: #444;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+.form-group small {
+    color: #999;
+    display: block;
+    margin-top: 7px;
+}
+
+.sweet-option {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+    margin: 13px 0;
+    font-weight: normal !important;
+    color: #666 !important;
+    cursor: pointer;
+}
+
+.sweet-option input {
+    accent-color: #a493c0;
+    width: 17px;
+    height: 17px;
+}
+
+.confirm-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    background: #a493c0;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.confirm-btn:hover {
+    background: #8672a7;
+    transform: translateY(-2px);
+}
+
+/* SUMMARY */
+
+.sweet-summary {
+    background: #faf6fc;
+    position: sticky;
+    top: 110px;
+}
+
+.summary-heading {
+    text-align: center;
+}
+
+.summary-heading span {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #a493c0;
+    font-weight: bold;
+}
+
+.summary-heading h2 {
+    color: #9279ae;
+    margin: 12px 0;
+}
+
+.summary-heading p {
+    color: #888;
+}
+
+.summary-illustration {
+    font-size: 65px;
+    text-align: center;
+    margin: 25px 0;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+    color: #777;
+    font-size: 14px;
+}
+
+.summary-row strong {
+    color: #443b4c;
+    text-align: right;
+    max-width: 60%;
+    overflow-wrap: anywhere;
+}
+
+.sweet-summary hr {
+    border: none;
+    border-top: 1px solid #e5dce9;
+    margin: 25px 0;
+}
+
+.total-row {
+    font-size: 20px;
+    font-weight: bold;
+    color: #9279ae;
+}
+
+.total-row strong {
+    color: #9279ae;
+}
+
+.summary-note {
+    text-align: center;
+    color: #999;
+    font-size: 13px;
+    margin-top: 30px;
+    line-height: 1.6;
+}
+
+/* DARK MODE SUPPORT */
+
+body.dark-mode .sweet-form-card,
+body.dark-mode .sweet-summary {
+    background: #292431;
+    color: #eee;
+}
+
+body.dark-mode .sweet-form-card h2,
+body.dark-mode .sweet-summary h2 {
+    color: #c4addf;
+}
+
+body.dark-mode .form-group > label:first-child,
+body.dark-mode .sweet-option,
+body.dark-mode .summary-row,
+body.dark-mode .summary-row strong {
+    color: #eee !important;
+}
+
+body.dark-mode .form-group select,
+body.dark-mode .form-group textarea,
+body.dark-mode .form-group input[type="number"] {
+    background: #383140;
+    color: white;
+    border-color: #665a70;
+}
+
+body.dark-mode .sweet-summary {
+    background: #302a39;
+}
+
+@media (max-width: 800px) {
+
+    .sweet-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sweet-summary {
+        position: static;
+    }
+
+    .sweet-intro h1 {
+        font-size: 30px;
+    }
+}

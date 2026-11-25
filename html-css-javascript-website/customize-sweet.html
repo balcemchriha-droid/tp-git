@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customize Your Sweet | Sweet Delights</title>
+
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="customize-sweet.css">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <button id="theme-toggle" aria-label="Switch to dark mode">
+            Dark Mode
+        </button>
+
+        <a href="panier.html">Panier</a>
+    </nav>
+</header>
+
+<main class="sweet-container">
+
+    <section class="sweet-intro">
+        <span class="intro-label">MADE JUST FOR YOU</span>
+        <h1>Create Your Own Sweet!</h1>
+        <p>
+            Choose your favorite dessert and personalize every detail.
+            Your imagination is the secret ingredient!
+        </p>
+    </section>
+
+    <div class="sweet-layout">
+
+        <!-- CUSTOMIZATION FORM -->
+        <section class="sweet-form-card">
+
+            <h2>Let's Create Something Sweet</h2>
+
+            <form id="sweetForm">
+
+                <!-- DESSERT TYPE -->
+                <div class="form-group">
+                    <label for="dessertType">1. Choose your dessert</label>
+
+                    <select id="dessertType" required>
+                        <option value="Cake" data-base="35">Cake</option>
+                        <option value="Pie" data-base="25">Pie</option>
+                        <option value="Cupcakes" data-base="20">Cupcakes</option>
+                        <option value="Cookies" data-base="15">Cookies</option>
+                        <option value="Cheesecake" data-base="40">Cheesecake</option>
+                    </select>
+                </div>
+
+                <!-- SIZE -->
+                <div class="form-group">
+                    <label for="dessertSize">2. Choose your size</label>
+
+                    <select id="dessertSize" required>
+                        <option value="Small" data-multiplier="1">Small</option>
+                        <option value="Medium" data-multiplier="1.5" selected>Medium</option>
+                        <option value="Large" data-multiplier="2">Large</option>
+                    </select>
+                </div>
+
+                <!-- FLAVOR -->
+                <div class="form-group">
+                    <label for="dessertFlavor">3. Choose your flavor</label>
+
+                    <select id="dessertFlavor" required>
+                        <option value="Chocolate">Chocolate</option>
+                        <option value="Vanilla">Vanilla</option>
+                        <option value="Strawberry">Strawberry</option>
+                        <option value="Caramel">Caramel</option>
+                        <option value="Lemon">Lemon</option>
+                        <option value="Red Velvet">Red Velvet</option>
+                    </select>
+                </div>
+
+                <!-- DECORATION -->
+                <div class="form-group">
+                    <label>4. Choose your decorations</label>
+
+                    <label class="sweet-option">
+                        <input type="checkbox" name="decoration"
+                            value="Fresh fruits" data-price="5">
+                        Fresh fruits (+5 DT)
+                    </label>
+
+                    <label class="sweet-option">
+                        <input type="checkbox" name="decoration"
+                            value="Chocolate decoration" data-price="7">
+                        Chocolate decoration (+7 DT)
+                    </label>
+
+                    <label class="sweet-option">
+                        <input type="checkbox" name="decoration"
+                            value="Flowers" data-price="8">
+                        Edible flowers (+8 DT)
+                    </label>
+
+                    <label class="sweet-option">
+                        <input type="checkbox" name="decoration"
+                            value="Colorful sprinkles" data-price="3">
+                        Colorful sprinkles (+3 DT)
+                    </label>
+                </div>
+
+                <!-- EXTRA OPTIONS -->
+                <div class="form-group">
+                    <label>5. Extra options</label>
+
+                    <label class="sweet-option">
+                        <input type="checkbox" name="extra"
+                            value="Whipped cream" data-price="4">
+                        Whipped cream (+4 DT)
+                    </label>
+
+                    <label class="sweet-option">
+                        <input type="checkbox" name="extra"
+                            value="Candles" data-price="3">
+                        Birthday candles (+3 DT)
+                    </label>
+
+                    <label class="sweet-option">
+                        <input type="checkbox" name="extra"
+                            value="Gift packaging" data-price="6">
+                        Gift packaging (+6 DT)
+                    </label>
+                </div>
+
+                <!-- PERSONALIZED MESSAGE -->
+                <div class="form-group">
+                    <label for="sweetMessage">
+                        6. Add a personalized message
+                    </label>
+
+                    <textarea
+                        id="sweetMessage"
+                        maxlength="50"
+                        placeholder="Happy Birthday!..."
+                    ></textarea>
+
+                    <small>Maximum 50 characters.</small>
+                </div>
+
+                <!-- QUANTITY -->
+                <div class="form-group">
+                    <label for="sweetQuantity">7. Quantity</label>
+
+                    <input
+                        type="number"
+                        id="sweetQuantity"
+                        min="1"
+                        max="20"
+                        value="1"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="confirm-btn">
+                    Confirm My Creation ✨
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- LIVE ORDER SUMMARY -->
+        <aside class="sweet-summary">
+
+            <div class="summary-heading">
+                <span>YOUR CREATION</span>
+                <h2>Order Summary</h2>
+                <p>Your sweet, your way!</p>
+            </div>
+
+            <div class="summary-illustration">
+                🍰
+            </div>
+
+            <div class="summary-row">
+                <span>Dessert</span>
+                <strong id="summaryType">Cake</strong>
+            </div>
+
+            <div class="summary-row">
+                <span>Size</span>
+                <strong id="summarySize">Medium</strong>
+            </div>
+
+            <div class="summary-row">
+                <span>Flavor</span>
+                <strong id="summaryFlavor">Chocolate</strong>
+            </div>
+
+            <div class="summary-row">
+                <span>Decorations</span>
+                <strong id="summaryDecorations">None</strong>
+            </div>
+
+            <div class="summary-row">
+                <span>Extras</span>
+                <strong id="summaryExtras">None</strong>
+            </div>
+
+            <div class="summary-row">
+                <span>Message</span>
+                <strong id="summaryMessage">None</strong>
+            </div>
+
+            <div class="summary-row">
+                <span>Quantity</span>
+                <strong id="summaryQuantity">1</strong>
+            </div>
+
+            <hr>
+
+            <div class="summary-row total-row">
+                <span>Total</span>
+                <strong id="totalPrice">52.50 DT</strong>
+            </div>
+
+            <p class="summary-note">
+                Every creation is made with love and care. ❤️
+            </p>
+
+        </aside>
+
+    </div>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Sweet Delights. All rights reserved.</p>
+</footer>
+
+<script src="theme.js"></script>
+<script src="customize-sweet.js"></script>
+
+</body>
+</html>

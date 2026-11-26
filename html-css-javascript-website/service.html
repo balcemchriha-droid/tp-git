@@ -1,74 +1,148 @@
-```html
+
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nos Services</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Explore Sweet Delights bakery services, from custom cakes to event pastry orders.">
+    <title>Our Services | Sweet Delights</title>
+    <link rel="stylesheet" href="bakery.css">
 </head>
 <body>
+<header class="site-header">
+    <a class="brand" href="index.html">Sweet <span>Delights</span><b>.</b></a>
 
-    <header>
-        <h1>Nos Services</h1>
-        <nav>
-            <a href="index.html">Accueil</a>
-            <a href="service.html">Services</a>
-            <a href="panier.html">Panier</a>
-        </nav>
-    </header>
+    <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html" data-en="Home" data-fr="Accueil">Home</a>
+        <a href="service.html" aria-current="page" data-en="Services" data-fr="Services">Services</a>
+        <a href="sales.html" data-en="Our treats" data-fr="Nos douceurs">Our treats</a>
+        <a href="contact.html" data-en="Contact" data-fr="Contact">Contact</a>
+    </nav>
 
-    <main>
-        <h2>Découvrez nos services</h2>
-        <p>Choisissez le service qui correspond à vos besoins.</p>
+    <div class="header-tools">
+        <button id="theme-toggle" class="tool-button" type="button">🌙</button>
+        <button id="language-toggle" class="tool-button" type="button">FR 🇫🇷</button>
+        <a class="cart-link" href="panier.html">🛒 Cart</a>
+    </div>
+</header>
 
-        <section class="services">
+<main>
+    <section class="page-hero service-hero">
+        <p class="eyebrow" data-en="A little extra for your special moments" data-fr="Une attention en plus pour vos moments précieux">
+            A little extra for your special moments
+        </p>
 
+        <h1 data-en="Made for sharing, celebrating and enjoying."
+            data-fr="Pour partager, célébrer et savourer.">
+            Made for sharing, celebrating and enjoying.
+        </h1>
+
+        <p data-en="From a birthday cake to a table full of treats, let us help make your occasion memorable."
+           data-fr="Du gâteau d'anniversaire à une table remplie de gourmandises, nous vous aidons à rendre votre événement inoubliable.">
+            From a birthday cake to a table full of treats, let us help make your occasion memorable.
+        </p>
+
+        <a class="button button-dark" href="contact.html"
+           data-en="Ask about an order" data-fr="Demander un devis">
+            Ask about an order
+        </a>
+    </section>
+
+    <section class="content-section">
+        <div class="section-title">
+            <p class="eyebrow">HOW WE CAN HELP</p>
+            <h2>Bakery services, with a personal touch</h2>
+            <p>Tell us what you are celebrating or craving. We can discuss the details and help you find the right treat.</p>
+        </div>
+
+        <div class="service-grid">
             <article class="service-card">
-                <h3>Développement Web</h3>
-                <p>Création de sites web modernes et adaptés à vos besoins.</p>
-                <p class="price">À partir de 500 DT</p>
-                <button onclick="ajouterAuPanier('Développement Web', 500)">
-                    Ajouter au panier
-                </button>
+                <div class="service-icon">🎂</div>
+                <p class="eyebrow">01 / CUSTOM CAKES</p>
+                <h2>Custom celebration cakes</h2>
+                <p>
+                    Choose the occasion, size, flavours and finishing touches.
+                    Share your ideas with us and we can discuss a cake that
+                    suits your celebration.
+                </p>
+                <a href="contact.html" class="text-link">Discuss a cake →</a>
             </article>
 
             <article class="service-card">
-                <h3>Design Graphique</h3>
-                <p>Création de logos, affiches et identités visuelles.</p>
-                <p class="price">À partir de 100 DT</p>
-                <button onclick="ajouterAuPanier('Design Graphique', 100)">
-                    Ajouter au panier
-                </button>
+                <div class="service-icon">🥐</div>
+                <p class="eyebrow">02 / EVENT TREATS</p>
+                <h2>Pastry boxes & event orders</h2>
+                <p>
+                    Planning a gathering? Ask us about assorted pastries and
+                    sweet selections for family events, meetings and celebrations.
+                </p>
+                <a href="contact.html" class="text-link">Plan an order →</a>
             </article>
 
             <article class="service-card">
-                <h3>Maintenance Informatique</h3>
-                <p>Installation, dépannage et maintenance de vos systèmes.</p>
-                <p class="price">À partir de 50 DT</p>
-                <button onclick="ajouterAuPanier('Maintenance Informatique', 50)">
-                    Ajouter au panier
-                </button>
+                <div class="service-icon">🍞</div>
+                <p class="eyebrow">03 / EVERYDAY FAVOURITES</p>
+                <h2>Fresh bakery selection</h2>
+                <p>
+                    Browse our everyday selection of breads, viennoiseries,
+                    tarts and desserts. Check the shop for the products currently listed.
+                </p>
+                <a href="sales.html" class="text-link">Browse the shop →</a>
             </article>
+        </div>
+    </section>
 
-        </section>
-    </main>
+    <section class="order-steps">
+        <div class="section-title">
+            <p class="eyebrow">A SIMPLE PROCESS</p>
+            <h2>Let's make it happen</h2>
+        </div>
 
-    <script>
-        function ajouterAuPanier(nom, prix) {
-            let panier = JSON.parse(localStorage.getItem("panier")) || [];
+        <div class="steps-grid">
+            <div>
+                <b>1</b>
+                <h3>Tell us your idea</h3>
+                <p>Send us the occasion, date and what you have in mind.</p>
+            </div>
 
-            panier.push({
-                nom: nom,
-                prix: prix
-            });
+            <div>
+                <b>2</b>
+                <h3>Discuss the details</h3>
+                <p>We can discuss flavours, size, quantity and decoration.</p>
+            </div>
 
-            localStorage.setItem("panier", JSON.stringify(panier));
+            <div>
+                <b>3</b>
+                <h3>Confirm your order</h3>
+                <p>Once the details are agreed, confirm your order with the bakery.</p>
+            </div>
+        </div>
 
-            alert("Service ajouté au panier !");
-        }
-    </script>
+        <p class="fine-print">
+            Availability, lead times and pricing are confirmed directly with the bakery.
+        </p>
+    </section>
 
+    <section class="closing-cta">
+        <p class="eyebrow">HAVE SOMETHING IN MIND?</p>
+        <h2>We would love to hear about it.</h2>
+        <a class="button button-light" href="contact.html">Contact the bakery</a>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <a class="brand brand-footer" href="index.html">Sweet <span>Delights</span><b>.</b></a>
+    <p>A little sweetness, made with love.</p>
+    <div class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="service.html">Services</a>
+        <a href="sales.html">Shop</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <small>© 2026 Sweet Delights. All rights reserved.</small>
+</footer>
+
+<script src="theme.js"></script>
+<script src="language.js"></script>
 </body>
 </html>
-```

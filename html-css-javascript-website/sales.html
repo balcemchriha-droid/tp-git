@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,81 +9,137 @@
     <link rel="stylesheet" href="bakery.css">
 </head>
 <body>
+
 <header class="site-header">
     <a class="brand" href="index.html">Sweet <span>Delights</span><b>.</b></a>
+
     <nav class="main-nav" aria-label="Main navigation">
-        <a href="index.html" data-en="Home" data-fr="Accueil">Home</a>
-        <a href="service.html" data-en="Services" data-fr="Services">Services</a>
-        <a href="sales.html" aria-current="page" data-en="Our treats" data-fr="Nos douceurs">Our treats</a>
-        <a href="contact.html" data-en="Contact" data-fr="Contact">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="service.html">Services</a>
+        <a href="sales.html" aria-current="page">Our treats</a>
+        <a href="contact.html">Contact</a>
     </nav>
+
     <div class="header-tools">
-        <button id="theme-toggle" class="tool-button" type="button" aria-label="Toggle dark mode">🌙</button>
+        <button id="theme-toggle" class="tool-button" type="button">🌙</button>
         <button id="language-toggle" class="tool-button" type="button">FR 🇫🇷</button>
-        <a class="cart-link" href="panier.html">🛒 <span data-en="Cart" data-fr="Panier">Cart</span> <b id="cart-count">0</b></a>
+        <a class="cart-link" href="panier.html">
+            🛒 Cart <b id="cart-count">0</b>
+        </a>
     </div>
 </header>
 
 <main>
     <section class="page-hero shop-hero">
-        <p class="eyebrow" data-en="A little treat goes a long way" data-fr="Une petite douceur fait toute la différence">A little treat goes a long way</p>
-        <h1 data-en="Freshly baked favourites." data-fr="Vos douceurs préférées, fraîchement préparées.">Freshly baked favourites.</h1>
-        <p data-en="Browse our selection of cakes, pastries and sweet treats. Find your favourite and add it to your basket."
-           data-fr="Parcourez notre sélection de gâteaux, viennoiseries et douceurs. Trouvez votre préférée et ajoutez-la au panier.">
-            Browse our selection of cakes, pastries and sweet treats. Find your favourite and add it to your basket.
+        <p class="eyebrow">A LITTLE TREAT GOES A LONG WAY</p>
+        <h1>Freshly baked favourites.</h1>
+        <p>
+            Browse our selection of cakes, pastries and sweet treats.
+            Find your favourite and add it to your basket.
         </p>
     </section>
 
     <section class="catalogue-section" id="catalogue">
         <div class="catalogue-heading">
-            <div><p class="eyebrow" data-en="THE SWEET COUNTER" data-fr="LE COMPTOIR DES DOUCEURS">THE SWEET COUNTER</p><h2 data-en="Find your favourite" data-fr="Trouvez votre préférée">Find your favourite</h2></div>
-            <a class="custom-order-link" href="service.html" data-en="Want a custom cake? →" data-fr="Envie d'un gâteau personnalisé ? →">Want a custom cake? →</a>
+            <div>
+                <p class="eyebrow">THE SWEET COUNTER</p>
+                <h2>Find your favourite</h2>
+            </div>
+            <a class="custom-order-link" href="service.html">
+                Want a custom cake? →
+            </a>
         </div>
 
         <div class="shop-controls">
-            <label class="search-label"><span data-en="Search products" data-fr="Rechercher">Search products</span><input id="searchInput" type="search" placeholder="Try “tart” or “chocolate”" aria-label="Search products"></label>
-            <label><span data-en="Category" data-fr="Catégorie">Category</span>
+            <label class="search-label">
+                <span>Search products</span>
+                <input
+                    id="searchInput"
+                    type="search"
+                    placeholder="Try tart or chocolate"
+                    aria-label="Search products">
+            </label>
+
+            <label>
+                <span>Category</span>
                 <select id="categoryFilter" aria-label="Filter by category">
                     <option value="all">All categories</option>
-                    <option value="pies">Pies</option><option value="cakes">Cakes</option><option value="tarts">Tarts</option>
-                    <option value="cupcakes">Cupcakes</option><option value="cheesecakes">Cheesecakes</option>
-                    <option value="macarons">Macarons</option><option value="viennoiseries">Viennoiseries</option>
+                    <option value="pies">Pies</option>
+                    <option value="cakes">Cakes</option>
+                    <option value="tarts">Tarts</option>
+                    <option value="cupcakes">Cupcakes</option>
+                    <option value="cheesecakes">Cheesecakes</option>
+                    <option value="macarons">Macarons</option>
+                    <option value="viennoiseries">Viennoiseries</option>
                 </select>
             </label>
-            <label><span data-en="Sort by" data-fr="Trier par">Sort by</span>
+
+            <label>
+                <span>Sort by</span>
                 <select id="sortProducts" aria-label="Sort products">
-                    <option value="default">Featured</option><option value="price-low">Price: low to high</option>
-                    <option value="price-high">Price: high to low</option><option value="name">Name: A to Z</option>
+                    <option value="default">Featured</option>
+                    <option value="price-low">Price: low to high</option>
+                    <option value="price-high">Price: high to low</option>
+                    <option value="name">Name: A to Z</option>
                 </select>
             </label>
         </div>
 
-        <div class="results-line"><p id="resultsCount" aria-live="polite"></p><p id="noResults" hidden>No treats found. Try another search.</p></div>
+        <div class="results-line">
+            <p id="resultsCount">Products</p>
+            <p>Freshly prepared with care ♡</p>
+        </div>
+
         <div class="products-grid" id="productsContainer"></div>
+
+        <p id="noResults" hidden>
+            No products found. Try another search or category.
+        </p>
     </section>
 </main>
 
-<div class="product-modal" id="productModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalName">
+<!-- Product details modal -->
+<div class="product-modal" id="productModal" aria-hidden="true">
     <div class="modal-backdrop" data-close-modal></div>
-    <div class="modal-panel">
-        <button type="button" class="modal-close" id="closeModal" aria-label="Close details">×</button>
-        <div class="modal-product-visual" id="modalVisual" aria-hidden="true">🍰</div>
+
+    <div class="modal-panel" role="dialog" aria-modal="true"
+         aria-labelledby="modalName">
+
+        <button class="modal-close" id="closeModal"
+                type="button" aria-label="Close">×</button>
+
+        <div class="modal-product-visual" id="modalVisual">🍰</div>
+
         <div class="modal-product-info">
             <p class="eyebrow" id="modalCategory"></p>
             <h2 id="modalName"></h2>
             <p id="modalDescription"></p>
             <strong class="modal-price" id="modalPrice"></strong>
-            <button type="button" class="button button-dark" id="modalAddToCart">Add to basket</button>
+            <button class="button button-dark" id="modalAddToCart"
+                    type="button">
+                Add to basket
+            </button>
         </div>
-        <section class="related-section"><h3 data-en="You may also like" data-fr="Vous aimerez aussi">You may also like</h3><div id="relatedProducts" class="related-grid"></div></section>
+
+        <div class="related-section">
+            <h3>You may also like</h3>
+            <div class="related-grid" id="relatedProducts"></div>
+        </div>
     </div>
 </div>
 
 <footer class="site-footer">
-    <a class="brand brand-footer" href="index.html">Sweet <span>Delights</span><b>.</b></a>
-    <p data-en="A little sweetness, made with love." data-fr="Un peu de douceur, fait avec amour.">A little sweetness, made with love.</p>
-    <div class="footer-nav"><a href="index.html">Home</a><a href="service.html">Services</a><a href="sales.html">Shop</a><a href="contact.html">Contact</a></div>
-    <small>© 2026 Sweet Delights. <span data-en="All rights reserved." data-fr="Tous droits réservés.">All rights reserved.</span></small>
+    <a class="brand brand-footer" href="index.html">
+        Sweet <span>Delights</span><b>.</b>
+    </a>
+    <p>A little sweetness, made with love.</p>
+    <div class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="service.html">Services</a>
+        <a href="sales.html">Shop</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <small>© 2026 Sweet Delights. All rights reserved.</small>
 </footer>
 
 <script src="theme.js"></script>
